@@ -29,7 +29,7 @@ def access_t():
     except:
         cursor.rollback()
     finally:
-        print('Got Access Token from DB')
+        print('Got '+ row_to_list[0] + ' as Access Token from DB')
         cursor.close()
         conn.close()
         print('Connection Closed')
@@ -48,7 +48,7 @@ def refresh_t():
     except:
         cursor.rollback()
     finally:
-        print('Got Refresh Token from DB')
+        print('Got '+ row_to_list[0]+ ' as Refresh Token from DB')
         cursor.close()
         conn.close()
         print('Connection Closed')
@@ -105,7 +105,7 @@ def update_tokens():
     except:
         cursor.rollback()
     finally:
-        print('Updated Access Token and Refresh Token')
+        print('Updated Access Token is ' + new_access_token+ ' and Refresh Token is ' + new_refresh_token)
         cursor.close()
         conn.close()
         print('Connection Closed')
